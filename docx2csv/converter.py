@@ -23,16 +23,17 @@ def __extract_table(table):
                     r.append(r[-1])
                 else:
                     cell = _Cell(tc, table)
-                    r.append(cell.text.replace('\n', ' ').encode('utf8'))
+                    r.append(cell.text.replace('\n', ',').encode('utf8'))
         results.append(r)
         n += 1
     return results
 
-def __store_table(tabdata, filename, format='csv'):
+def __store_table(tabdata, filename, delimit, format='csv'):
     """Saves table data as csv file"""
     if format == 'csv':
+        delimit=delimit.strip('\'')
         f = open(filename, 'w')
-        w = csv.writer(f, delimiter=',')
+        w = csv.writer(f, delimiter=';')
         for row in tabdata:
             w.writerow(row)
     elif format == 'xls':

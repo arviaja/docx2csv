@@ -14,6 +14,7 @@ Options:
   --format TEXT         Output format: CSV, XLSX
   --singlefile TEXT     Outputs single XLS file with multiple sheets: True or False
   --sizefilter INTEGER  Filters table by size number of rows
+  --delimit TEXT        Changes the delimiter to Your desired Symbol. Don't use "" or ''.
   --help                Show this message and exit.
 ```
 ## Examples
